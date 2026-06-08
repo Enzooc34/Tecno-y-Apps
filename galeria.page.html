@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Galería</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+    @for (perro of perros; track perro.id) {
+      <ion-item button [routerLink]="['/detalle', perro.id]">
+        <ion-label>
+          <h2>{{ perro.nombre }}</h2>
+          <p>{{ perro.raza }}</p>
+        </ion-label>
+        @if (perro.adoptado) {
+          <ion-label slot="end">Adoptado</ion-label>
+        }
+      </ion-item>
+    }
+  </ion-list>
+
+</ion-content>
